@@ -1,0 +1,39 @@
+.url-editor-container {
+  display: flex;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin: 1rem;
+}
+.url-editor {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 1rem auto;
+  width: 100%;
+}
+.url-editor-items {
+  margin: 0;
+  padding: 1rem 0;
+  list-style: none;
+  display: none;
+}
+.url-editor-form-row {
+  display: flex;
+  flex-flow: row nowrap;
+}
+.url-editor-form-input {
+  padding: 1rem;
+  flex: 1 1 auto;
+}
+.url-editor-form-submit {
+  flex: 0 0 auto;
+  min-width: 100px;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+.url-editor-form-input,
+.url-editor-form-submit {
+  font-size: 16px;
+  border-radius: 5px;
+  border: solid 1px #9999;
+}
+

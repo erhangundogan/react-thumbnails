@@ -1,0 +1,16 @@
+.error-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.error {
+  width: 400px;
+  margin: 3rem auto;
+  background-color: #FCCC;
+  padding: 1rem;
+  border-radius: 5px;
+  color: #333;
+  border: solid 1px #B99A;
+}

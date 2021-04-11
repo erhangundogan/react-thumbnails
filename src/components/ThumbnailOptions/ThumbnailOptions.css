@@ -1,0 +1,36 @@
+.thumbnail-options-container {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-bottom: 1rem;
+}
+.thumbnail-options-container.left {
+  justify-content: flex-start;
+}
+.thumbnail-options-container.center {
+  justify-content: center;
+}
+.thumbnail-options-container.right {
+  justify-content: flex-end;
+}
+.thumbnail-option {
+  min-height: 32px;
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+.thumbnail-options-title {
+  vertical-align: middle;
+  margin-right: 0.5rem;
+  color: #CCC;
+  font-weight: normal;
+}
+.thumbnail-options-title.small {
+  height: 32px;
+  line-height: 32px;
+  font-size: 13px;
+}
+.thumbnail-options-title.medium {
+  height: 45px;
+  line-height: 45px;
+  font-size: 15px;
+}

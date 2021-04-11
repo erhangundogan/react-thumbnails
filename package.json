@@ -1,0 +1,101 @@
+{
+  "name": "react-image-view",
+  "version": "1.0.0",
+  "description": "Generate thumbnail and preview for images from URL source",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erhangundogan/react-image-view.git"
+  },
+  "files": [
+    "dist/*",
+    "LICENSE.md",
+    "README.md"
+  ],
+  "author": "erhan.gundogan@gmail.com",
+  "license": "MIT",
+  "private": false,
+  "types": "dist/react-image-view.d.ts",
+  "main": "dist/cjs/react-image-view.js",
+  "module": "dist/es/react-image-view.js",
+  "browser": "dist/umd/react-image-view.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
+    "test": "rimraf coverage && jest",
+    "build": "npm run clean && NODE_ENV=development rollup -c rollup.examples.config.js",
+    "build:prod": "npm run clean && NODE_ENV=production rollup -c rollup.config.js",
+    "start": "npm run build && serve -s dist",
+    "watch": "npm-watch",
+    "prepublishOnly": "npm run build:prod"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^18.0.0",
+    "@rollup/plugin-node-resolve": "^11.2.1",
+    "@rollup/plugin-replace": "^2.4.2",
+    "@testing-library/jest-dom": "^5.11.10",
+    "@testing-library/react": "^11.2.6",
+    "@types/jest": "^26.0.22",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "@typescript-eslint/eslint-plugin": "^4.21.0",
+    "@typescript-eslint/parser": "^4.21.0",
+    "@wessberg/rollup-plugin-ts": "^1.3.11",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.24.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-jest": "^24.3.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "jest": "^26.6.3",
+    "npm-watch": "^0.9.0",
+    "prettier": "^2.2.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-test-renderer": "^17.0.2",
+    "rollup": "^2.45.1",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-filesize": "^9.1.1",
+    "rollup-plugin-postcss": "^3.1.8",
+    "rollup-plugin-terser": "^7.0.2",
+    "serve": "^11.3.2",
+    "ts-jest": "^26.5.4",
+    "tslib": "^2.2.0",
+    "typescript": "^4.2.4"
+  },
+  "peerDependencies": {
+    "react": ">= 16.x || >=17.x",
+    "react-dom": ">= 16.x || >=17.x"
+  },
+  "dependencies": {
+    "image-helpers": "^1.1.0"
+  },
+  "jest": {
+    "rootDir": "./src",
+    "coverageDirectory": "./coverage",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/!(*.test).(ts|tsx)"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "moduleNameMapper": {
+      "\\.(css|less|scss|sass)$": "./src/styleMock.js"
+    },
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom/extend-expect"
+    ]
+  },
+  "watch": {
+    "start": {
+      "extensions": "css,less,sass,scss,js,jsx,ts,tsx,json",
+      "patterns": [
+        "src",
+        "rollup.config.js",
+        "tsconfig.json"
+      ]
+    }
+  }
+}
