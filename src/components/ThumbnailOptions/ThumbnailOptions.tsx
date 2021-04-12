@@ -3,7 +3,7 @@ import { AutoSize, Border, Shadow, Shape, ShowUrl, Size } from '../ThumbnailOpti
 import { useThumbnailOptions } from '../../providers/ThumbnailOptionsProvider/ThumbnailOptionsProvider';
 import './ThumbnailOptions.css';
 
-const ThumbnailOptions = () => {
+const ThumbnailOptions = ({ showOptions }) => {
   const {
     options,
     changeSize,
@@ -17,12 +17,24 @@ const ThumbnailOptions = () => {
   return (
     <div className={`thumbnail-options-container ${options.iconAlignment}`}>
       <div className={`thumbnail-options-title ${options.iconSize}`}>Options:</div>
-      <Size changeSize={changeSize} selected={options.size} iconSize={options.iconSize} />
-      <Shape changeShape={changeShape} selected={options.shape} iconSize={options.iconSize} />
-      <AutoSize toggleAutoSize={toggleAutoSize} selected={options.autoSize} iconSize={options.iconSize} />
-      <Border toggleBorder={toggleBorder} selected={options.border} iconSize={options.iconSize} />
-      <Shadow toggleShadow={toggleShadow} selected={options.shadow} iconSize={options.iconSize} />
-      <ShowUrl toggleShowUrl={toggleShowUrl} selected={options.showUrl} iconSize={options.iconSize} />
+      {showOptions.has('size') ? (
+        <Size changeSize={changeSize} selected={options.size} iconSize={options.iconSize} />
+      ) : null}
+      {showOptions.has('shape') ? (
+        <Shape changeShape={changeShape} selected={options.shape} iconSize={options.iconSize} />
+      ) : null}
+      {showOptions.has('autoSize') ? (
+        <AutoSize toggleAutoSize={toggleAutoSize} selected={options.autoSize} iconSize={options.iconSize} />
+      ) : null}
+      {showOptions.has('border') ? (
+        <Border toggleBorder={toggleBorder} selected={options.border} iconSize={options.iconSize} />
+      ) : null}
+      {showOptions.has('shadow') ? (
+        <Shadow toggleShadow={toggleShadow} selected={options.shadow} iconSize={options.iconSize} />
+      ) : null}
+      {showOptions.has('showUrl') ? (
+        <ShowUrl toggleShowUrl={toggleShowUrl} selected={options.showUrl} iconSize={options.iconSize} />
+      ) : null}
     </div>
   );
 };

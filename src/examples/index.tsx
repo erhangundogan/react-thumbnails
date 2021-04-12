@@ -8,15 +8,12 @@ import ThumbnailOptionsProvider from '../providers/ThumbnailOptionsProvider/Thum
 const Example = () => {
   return (
     <div className="react-image">
-      <ImagesProvider
-        urls={[
-          'https://cdn.myanimelist.net/images/characters/13/353668.jpg',
-          'https://cdn.myanimelist.net/images/characters/3/353670.jpg',
-          'https://cdn.myanimelist.net/images/characters/16/349528.webp'
-        ]}
-      >
+      <ImagesProvider urls={[]}>
         <URLEditor />
-        <ThumbnailOptionsProvider>
+        <ThumbnailOptionsProvider
+          showOptions={new Set(['autoSize', 'size', 'shape', 'shadow', 'border', 'showUrl'])}
+          defaults={{ autoSize: true, size: 'large' }}
+        >
           <Thumbnails />
         </ThumbnailOptionsProvider>
       </ImagesProvider>

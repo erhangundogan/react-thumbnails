@@ -2,6 +2,7 @@ import React, { createContext, useCallback, useContext, useEffect, useState } fr
 import { fetchImages, verifyUrls } from 'image-helpers';
 import { ImageProviderPropsType, ImagesProviderContextType } from './ImageProvider.types';
 import { useError } from '../ErrorProvider/ErrorProvider';
+import './ImageProvider.css';
 
 export const ImagesProviderContext = createContext<ImagesProviderContextType>({} as any);
 export const useImages = () => useContext(ImagesProviderContext);

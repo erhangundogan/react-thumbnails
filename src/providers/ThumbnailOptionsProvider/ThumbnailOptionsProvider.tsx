@@ -1,18 +1,27 @@
-import React, { createContext, useCallback, useContext, useState } from 'react';
+import React, {
+  createContext,
+  Dispatch,
+  PropsWithChildren,
+  SetStateAction,
+  useCallback,
+  useContext,
+  useState
+} from 'react';
 
-export const ThumbnailOptionsProviderContext = createContext({} as any);
+export const ThumbnailOptionsProviderContext = createContext({} as ThumbnailOptionsProviderType);
 export const useThumbnailOptions = () => useContext(ThumbnailOptionsProviderContext);
 
 export interface ThumbnailOptionsProviderType {
   options: ThumbnailOptionsPropsType;
-  setOptions: any;
-  changeSize: any;
-  changeShape: any;
-  getDimensions: any;
-  toggleAutoSize: any;
-  toggleBorder: any;
-  toggleShowUrl: any;
-  toggleShadow: any;
+  showOptions: Set<ThumbnailOptionType>;
+  setOptions: Dispatch<SetStateAction<ThumbnailOptionsPropsType>>;
+  changeSize: () => void;
+  changeShape: () => void;
+  getDimensions: () => { width: number; height: number };
+  toggleAutoSize: () => void;
+  toggleBorder: () => void;
+  toggleShowUrl: () => void;
+  toggleShadow: () => void;
 }
 
 export interface ThumbnailOptionsPropsType {
@@ -26,7 +35,14 @@ export interface ThumbnailOptionsPropsType {
   iconAlignment?: 'left' | 'center' | 'right';
 }
 
-const ThumbnailOptionsProvider = ({ children, defaults = {} }: any) => {
+export type ThumbnailOptionType = 'autoSize' | 'border' | 'size' | 'showUrl' | 'shadow' | 'shape';
+
+export interface ThumbnailOptionsProviderPropsType extends PropsWithChildren<any> {
+  defaults?: ThumbnailOptionsPropsType;
+  showOptions?: Set<ThumbnailOptionType>;
+}
+
+const ThumbnailOptionsProvider = ({ children, defaults = {}, showOptions }: any) => {
   const [options, setOptions] = useState<ThumbnailOptionsPropsType>({
     size: 'small',
     shape: 'default',
@@ -105,6 +121,7 @@ const ThumbnailOptionsProvider = ({ children, defaults = {} }: any) => {
       value={{
         options,
         setOptions,
+        showOptions,
         changeSize,
         changeShape,
         getDimensions,
