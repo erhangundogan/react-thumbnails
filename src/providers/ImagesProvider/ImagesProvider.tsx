@@ -12,13 +12,27 @@ const ImagesProvider = ({ children, urls: defaultUrls = [], options = {} }: Imag
   const [urls, setUrls] = useState<string[]>([]);
   const { setError } = useError();
 
-  const addUrl = useCallback((url: string) => setUrls((items = []) => [...items, url]), [setUrls]);
+  const addUrl = useCallback(
+    (url: string) => {
+      if (options.maxImagesCount && urls.length === options.maxImagesCount) {
+        console.log('addUrl, max images count reached');
+        return;
+      }
+      setUrls((items = []) => [...items, url]);
+    },
+    [options.maxImagesCount, urls.length]
+  );
 
   useEffect(() => {
     if (urls.length === 0) {
       if (images.length > 0) {
         setImages([]);
       }
+      return;
+    }
+
+    if (options.maxImagesCount && images.length === options.maxImagesCount) {
+      console.log('useEffect, max images count reached');
       return;
     }
 
@@ -51,12 +65,16 @@ const ImagesProvider = ({ children, urls: defaultUrls = [], options = {} }: Imag
 
   useEffect(() => {
     if (defaultUrls.length > 0) {
-      setUrls(defaultUrls);
+      if (options.maxImagesCount) {
+        setUrls(defaultUrls.slice(0, options.maxImagesCount));
+      } else {
+        setUrls(defaultUrls);
+      }
     }
   }, [defaultUrls]);
 
   return (
-    <ImagesProviderContext.Provider value={{ images, setImages, setUrls, addUrl, urls }}>
+    <ImagesProviderContext.Provider value={{ images, addUrl, urls, options }}>
       {children}
     </ImagesProviderContext.Provider>
   );

@@ -2,10 +2,9 @@ import { PropsWithChildren } from 'react';
 
 export interface ImagesProviderContextType {
   images: any[];
-  setImages: any;
-  setUrls: any;
   addUrl: (url: string) => void;
   urls: string[];
+  options: ImageProviderOptionsType;
 }
 
 export interface VerifyUrlsOptionsType {
@@ -26,6 +25,7 @@ export interface FetchImagesCorsOptionsType {
 }
 
 export interface ImageProviderOptionsType {
+  maxImagesCount?: number;
   verifyUrlsOptions?: VerifyUrlsOptionsType;
   fetchImagesOptions?: FetchImagesOptionsType;
   fetchImagesCorsOptions?: FetchImagesCorsOptionsType;

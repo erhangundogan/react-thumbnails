@@ -4,15 +4,8 @@ import { useThumbnailOptions } from '../../providers/ThumbnailOptionsProvider/Th
 import './ThumbnailOptions.css';
 
 const ThumbnailOptions = ({ showOptions }) => {
-  const {
-    options,
-    changeSize,
-    changeShape,
-    toggleAutoSize,
-    toggleBorder,
-    toggleShadow,
-    toggleShowUrl
-  } = useThumbnailOptions();
+  const { options, changeSize, changeShape, toggleAutoSize, toggleBorder, toggleShadow, toggleShowUrl } =
+    useThumbnailOptions();
 
   return (
     <div className={`thumbnail-options-container ${options.iconAlignment}`}>

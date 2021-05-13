@@ -13,7 +13,6 @@ const Thumbnails = ({ options: defaultOptions, onRenderThumbnail }: any) => {
   const { images } = useImages();
 
   const defaultRender = (image: any, index: number) => {
-    console.log('IMAGE:', image);
     return (
       <>
         <div className={`thumbnail-container ${shadow ? 'shadow' : ''}`} style={sizeStyles}>
@@ -33,7 +32,7 @@ const Thumbnails = ({ options: defaultOptions, onRenderThumbnail }: any) => {
         ) : null}
       </>
     );
-  }
+  };
 
   return (
     <div className="thumbnails-container">

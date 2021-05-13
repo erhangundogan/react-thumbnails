@@ -42,7 +42,7 @@ export interface ThumbnailOptionsProviderPropsType extends PropsWithChildren<any
   showOptions?: Set<ThumbnailOptionType>;
 }
 
-const ThumbnailOptionsProvider = ({ children, defaults = {}, showOptions }: any) => {
+const ThumbnailOptionsProvider = ({ children, defaults = {}, showOptions = new Set() }: any) => {
   const [options, setOptions] = useState<ThumbnailOptionsPropsType>({
     size: 'small',
     shape: 'default',

@@ -4,7 +4,7 @@ import './URLEditor.css';
 
 const URLEditor = () => {
   const formRef = useRef();
-  const { addUrl, urls } = useImages();
+  const { addUrl, urls, options } = useImages();
 
   const onSubmit = (event) => {
     event.preventDefault();
