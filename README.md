@@ -7,6 +7,8 @@ react-thumbnails
 
 React components to show thumbnails with various on-screen options.
 
+[live example][online-example-href]
+
 # Install
 
 ```bash
@@ -49,3 +51,4 @@ Please see [example][examples-href] below. Check out [type definitions][types-hr
 [ss-href]: https://imagemarker.s3.eu-central-1.amazonaws.com/react-thumbnails/react-thumbnails.png
 [examples-href]: src/examples/index.tsx
 [types-href]: src/providers/ImagesProvider/ImageProvider.types.ts
+[online-example-href]: https://codesandbox.io/s/react-thumbnails-demo-stqyp?file=/src/App.tsx
