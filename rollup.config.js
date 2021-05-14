@@ -21,18 +21,18 @@ export default {
   output: [
     {
       ...output,
-      file: 'dist/cjs/react-image-view.js',
+      file: 'dist/cjs/react-thumbnails.js',
       format: 'cjs'
     },
     {
       ...output,
-      file: 'dist/umd/react-image-view.js',
+      file: 'dist/umd/react-thumbnails.js',
       format: 'umd',
-      name: 'ReactImageView'
+      name: 'ReactThumbnails'
     },
     {
       ...output,
-      file: 'dist/es/react-image-view.js',
+      file: 'dist/es/react-thumbnails.js',
       format: 'es'
     }
   ],

@@ -20,7 +20,9 @@ const Thumbnails = ({ options: defaultOptions, onRenderThumbnail }: any) => {
             className={`thumbnail-image ${shape} ${border ? 'border' : ''}`}
             src={image?.dataUrl || image?.url}
             alt=""
-            onError={(event) => console.log((event.target as HTMLImageElement).src)}
+            onError={(event) =>
+              console.error('Cannot render thumbnail of', (event.target as HTMLImageElement).src)
+            }
           />
         </div>
         {showUrl && image?.url ? (

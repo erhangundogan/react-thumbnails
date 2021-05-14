@@ -1,10 +1,10 @@
 {
-  "name": "react-image-view",
+  "name": "react-thumbnails",
   "version": "1.0.0",
-  "description": "Generate thumbnail and preview for images from URL source",
+  "description": "Generate thumbnails from URL addresses",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/erhangundogan/react-image-view.git"
+    "url": "git+https://github.com/erhangundogan/react-thumbnails.git"
   },
   "files": [
     "dist/*",
@@ -14,10 +14,10 @@
   "author": "erhan.gundogan@gmail.com",
   "license": "MIT",
   "private": false,
-  "types": "dist/react-image-view.d.ts",
-  "main": "dist/cjs/react-image-view.js",
-  "module": "dist/es/react-image-view.js",
-  "browser": "dist/umd/react-image-view.js",
+  "types": "dist/react-thumbnails.d.ts",
+  "main": "dist/cjs/react-thumbnails.js",
+  "module": "dist/es/react-thumbnails.js",
+  "browser": "dist/umd/react-thumbnails.js",
   "scripts": {
     "clean": "rimraf dist",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",

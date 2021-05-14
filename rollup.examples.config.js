@@ -14,9 +14,9 @@ export default {
         'react': 'React',
         'react-dom': 'ReactDOM'
       },
-      file: 'dist/react-image-view.js',
+      file: 'dist/react-thumbnails.js',
       format: 'umd',
-      name: 'ReactImageView'
+      name: 'ReactThumbnails'
     }
   ],
   external: ['react', 'react-dom'],
