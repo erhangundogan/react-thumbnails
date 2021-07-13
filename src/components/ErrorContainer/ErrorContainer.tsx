@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import './ErrorContainer.css';
 
 const ErrorContainer = ({ error, clearError }) => {
   useEffect(() => {
